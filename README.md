@@ -7,12 +7,12 @@ Demo site:
 - Admin Demo:  http://opencart.garudacrafts.com/1561/admin/ (demo, demo)
 
 Installation instructions and more:
-- Installation and Upgrade Instructions:  http://www.garudacrafts.com/opencart/1561/installation-info
-- Frequently Asked Questions (FAQ):  http://www.garudacrafts.com/opencart/1561/faq
-- Changelog:  http://www.garudacrafts.com/opencart/1561/changelog
-- Features:  http://www.garudacrafts.com/opencart/1561/features
-- Modified Files: http://www.garudacrafts.com/opencart/1561/modified-files
-- Screenshots: http://www.garudacrafts.com/opencart/1561/screenshots
+- Installation and Upgrade Instructions:  http://opencart.garudacrafts.com/1561/installation-info
+- Frequently Asked Questions (FAQ):  http://opencart.garudacrafts.com/1561/faq
+- Changelog:  http://opencart.garudacrafts.com/1561/changelog
+- Features:  http://opencart.garudacrafts.com/1561/features
+- Modified Files: http://opencart.garudacrafts.com/1561/modified-files
+- Screenshots: http://opencart.garudacrafts.com/1561/screenshots
 
 ## Requirements
 - OpenCart v1.5.3.x - v1.5.6.x
@@ -31,7 +31,7 @@ Installation instructions and more:
 
 *NOTE:* "bonus" files in "/upload-bonus" directory are provided as extra code snippets and DO NOT come with support. Use at your own discretion!
 
-If you have any issues after installation, please check the FAQ (Frequenty Asked Questions) first! http://www.garudacrafts.com/opencart/1561/faq
+If you have any issues after installation, please check the FAQ (Frequenty Asked Questions) first! http://opencart.garudacrafts.com/1561/faq
 
 ## Changelog
 ### v2.3.2
