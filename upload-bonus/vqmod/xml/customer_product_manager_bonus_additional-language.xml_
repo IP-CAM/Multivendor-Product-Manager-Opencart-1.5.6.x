@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE modification [
+<!ENTITY addLanguage "dutch">
+]><modification>
+	<id>Customer Product Manager (CPM) for OpenCart</id>
+	<version>2.3.0</version>
+	<vqmver>2.4.0</vqmver>
+	<author>garudacrafts</author>
+	<notes>
+		- Requires Customer Product Manager (CPM) extension/module
+		- Description: additional language support for CPM
+		- Instructions:	(1) replace "english" in !ENTITY declaration above with the name of the directory of your additional language pack (e.g. "dutch")
+					(2) replace English text in quotes below on right side of "=" with new language equivalents (e.g. = 'Members' ->  = 'Leden')
+					(3) save file as customer_product_manager_additional-language.xml into your /vqmod/xml directory (e.g. 'customer_product_manager_dutch.xml')
+	</notes>
+
+	<!-- ADMIN CUSTOMER -->
+	
+	<file name="admin/language/&addLanguage;/common/header.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_member']                   		= 'Members';
+			$_['text_cpm_disabled']           		= 'CPM Disabled';
+			$_['text_cpm_enabled']            		= 'CPM Enabled';
+			$_['text_report_sale_member']   	= 'Member Sales';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/language/english/common/home.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_total_member']			= 'No. of CPM-Enabled Customers:';
+			$_['text_total_member_approval']	= 'CPM-Enabled Customers Awaiting Approval:';
+			$_['text_total_product']			= 'No. of Products:';
+			$_['text_total_product_approval']	= 'Products Awaiting Approval:';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="admin/language/&addLanguage;/sale/customer.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			// CPM Module Extension
+			$_['tab_cpm']                				= 'CPM';
+			$_['column_cpm_status']                		= 'CPM Status';
+			$_['text_customer_cpm_enabled']           	= 'You have enabled CPM for %s customers!';
+			$_['text_customer_cpm_disabled']          	= 'You have disabled CPM for %s customers!';
+			$_['button_cpm_enable']						= 'CPM Enable';
+			$_['button_cpm_disable']					= 'CPM Disable';
+			$_['entry_cpm'] 							= 'Customer Product Manager (CPM):';
+			$_['entry_cpm_account_name'] 				= 'Account Name:';
+			$_['entry_cpm_account_description'] 		= 'Account Description:';
+			$_['entry_cpm_account_image'] 				= 'Account Image:';
+			$_['entry_cpm_directory_images']			= 'Image Upload Directory:';
+			$_['entry_cpm_directory_downloads']  		= 'Downloads Directory:';
+			$_['entry_cpm_paypal_account']				= 'PayPal Account E-mail:';
+			$_['entry_cpm_commision_rate] 				= 'Commission Rate:';
+			$_['entry_cpm_max_products'] 				= 'Max Products:';
+			$_['entry_sort_order'] 						= 'Sort Order:';
+			$_['entry_keyword'] 						= 'Keyword:';
+			$_['cpm_field_name']                		= 'Name';
+			$_['cpm_field_value']               		= 'Value';
+			$_['text_image_manager']     				= 'Image Manager';
+			$_['text_browse']            				= 'Browse Files';
+			$_['text_clear']             				= 'Clear Image';
+			$_['error_cpm_account_description']           = 'CPM Account Description must be less than 1500 characters.';
+			$_['error_cpm_account_name']            	= 'CPM Account Name must be less than 64 characters.';
+			$_['error_cpm_paypal_account']             	= 'PayPal Account E-mail is invalid.';
+			$_['error_cpm_max_products']             	= 'Max Products must be a number greater than -1 or left empty.';
+			$_['error_cpm_commission_rate']             	= 'Commission Rate must be a number greater than 0 or left empty.';
+			$_['error_cpm_directory_images']             	= 'Directory for Images does not exist and cannot be created on the server. Create it using an FTP client first, then assign it here.';
+			$_['error_cpm_directory_downloads']         = 'Directory for Downloads does not exist and cannot be created on the server. Create it using an FTP client first, then assign it here.';
+			$_['error_cpm_custom_fields']             	= 'Custom Text Field(s) must be less than 64 characters.';
+			$_['warning_cpm_enabled']             		= 'Changes will not be saved to CPM fields data unless Enabled!';
+			$_['help_cpm_directory_images']             	= 'Enter a sub-directory under DIR_IMAGE/data/ to save images uploaded by CPM Account Customer. Overrides default CPM module setting.';
+			$_['help_cpm_directory_downloads']          = 'Enter a sub-directory under DIR_DOWNLOAD to save downloads stored by CPM Account Customer. Overrides default CPM module setting.';
+			$_['help_cpm_paypal_account']             	= 'Save PayPal account e-mail. Send money or pay members from the Admin Member Sales Report if an Admin PayPal account is saved in CPM module settings.';
+			$_['help_cpm_max_products']             	= 'Set max number of products this account can manage. Overrides default CPM setting. Enter -1 for unlimited.';
+			$_['help_cpm_commission_rate']             	= 'Set commission rate to charge as a percentage of the price of each order product listing. Overrides default CPM module setting.';
+			$_['help_cpm_custom_fields']             	= 'Define your own custom text field values.';
+			$_['help_sort_order']             			= 'Sort Order for Members page. Members are sorted by Account Name by default.';
+			$_['help_keyword']             			= 'SEO URL keyword for Member page.';
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- ADMIN PRODUCT -->
+	
+	<file name="admin/language/&addLanguage;/catalog/product.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_product_approved']         		= 'You have approved %s products!';
+			$_['text_product_enabled']           		= 'You have enabled %s products!';
+			$_['text_product_disabled']           		= 'You have disabled %s products!';
+			$_['error_notchecked']           			= 'No product(s) selected! Please select checkbox(es) next to product(s) and then click action button.';
+			$_['button_enable']							= 'Enable';
+			$_['button_disable']						= 'Disable';
+			$_['text_product_updated_cpm_customer'] 	= 'You have updated %s products!';
+			$_['button_update_cpm_customer']			= 'Update CPM Customer';
+			]]></add>
+		</operation>
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['entry_customer']           				= 'CPM Customer Account:';
+			$_['entry_approved']           				= 'CPM Approved:';
+			]]></add>
+		</operation>
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['column_approved']          				= 'Approved';
+			$_['column_cpm_customer_account']          	= 'CPM Customer';
+			]]></add>
+		</operation>
+	</file>
+		
+	<!-- ADMIN DOWNLOAD -->
+	
+	<file name="admin/language/english/catalog/download.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['column_cpm_member']		= 'CPM Member';
+			]]></add>
+		</operation>
+	</file>
+
+	<!-- ADMIN ORDER -->
+		
+	<file name="admin/language/&addLanguage;/sale/order.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			// CPM
+			$_['column_image']          			= 'Image';
+			$_['column_cpm_member']		= 'Member (CPM)';
+			$_['column_tax']                            	= 'Sales Tax';
+			$_['column_cpm_commission']		= 'Commission (CPM)';
+			$_['text_cpm_commission']		= 'Commission (CPM)';
+			$_['column_member']         		= 'Member';
+			$_['text_admin']            			= 'Store Admin';
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- FRONT-END ACCOUNT -->
+	
+	<file name="catalog/language/&addLanguage;/account/register.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_register_cpm_account'] 			= 'To apply for a membership, please submit the <a href="%s">membership account registration form</a>.';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/language/&addLanguage;/common/header.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_members']		= 'Members';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/language/&addLanguage;/common/footer.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_member'] 		= 'Members';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/language/&addLanguage;/account/account.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['membership_heading_title']	= 'My Membership Account';
+			$_['text_product']       		= 'Manage your product listings';
+			$_['text_product_images']       	= 'Manage your images';
+			$_['text_product_download']	= 'Manage digital file downloads';
+			$_['text_my_products']		= 'My Products';
+			$_['text_my_sales']			= 'My Sales';
+			$_['text_my_reports']			= 'My Reports';
+			$_['text_sales_history']		= 'View your product sales history';
+			$_['text_product_viewed']		= 'View your product listing views';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/language/&addLanguage;/account/edit.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			// CPM Module Extension
+			$_['entry_cpm_account_name'] 				= 'Account Name:';
+			$_['entry_cpm_account_description'] 		= 'Account Description:';
+			$_['entry_cpm_account_image'] 				= 'Account Image:';
+			$_['entry_cpm_paypal_account']				= 'PayPal E-mail:';
+			$_['text_your_cpm_account']					= 'Your Membership Info';
+			$_['text_custom_fields']					= 'Custom Field(s)';
+			$_['text_upload']      						= 'Your file was successfully uploaded!';
+			$_['text_clear']             				= 'Clear Image';
+			$_['error_cpm_account_description']     	= 'Account Description is required and must be less than 1,500 characters.';
+			$_['error_cpm_account_name']            	= 'Account Name is required and must be less than 128 characters.';
+			$_['error_cpm_account_image']           	= 'Account Image is required.';
+			$_['error_cpm_paypal_account']          	= 'PayPal Account E-mail is invalid.';
+			$_['error_cpm_custom_fields']           	= 'Additional Field(s) must be less than 128 characters.';
+			$_['error_filename']   						= 'Filename must be between 3 and 128 characters!';
+			$_['error_filetype']  						= 'Invalid file type!';
+			$_['help_cpm_paypal_account']           	= 'PayPal account is required for transferring sales.';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/language/&addLanguage;/account/success.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_message_cpm']  					= '<p>Congratulations! Your new website membership account has been successfully created!</p> <p>You can now take advantage of member privileges to enhance your online shopping experience with us.</p> <p>If you have ANY questions about the operation of this online shop, please email the store owner.</p> <p>A confirmation has been sent to the provided email address. If you have not received it within the hour, please <a href="%s">contact us</a>.</p>';
+			$_['text_approval_cpm'] 					= '<p>Thank you for registering a membership account with %s!</p><p>You will be notified by email once your account has been activated by the store owner.</p><p>If you have ANY questions about the operation of this online shop, please <a href="%s">contact the store owner</a>.</p>';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/&addLanguage;/mail/customer.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_welcome_cpm']  					= 'Welcome and thank you for registering a membership account with %s!';
+			$_['text_services_cpm'] 					= 'You now can take advantage of all the additional features of being a member, such as having access to your our Product Listing Manager with which you will be able to create and manage your own Product Listings!';
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- FRONT-END PRODUCT -->
+	
+	<file name="catalog/language/&addLanguage;/product/product.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_member'] 							= 'Member:';
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- FRONT-END ORDER -->
+		
+	<file name="catalog/language/&addLanguage;/account/order.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['column_cpm_member']	= 'Member';
+			$_['column_image']          		= 'Image';
+			$_['column_notified']  		= 'Notified';
+			$_['text_admin']  			= 'Store Admin';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/language/&addLanguage;/checkout/cart.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['column_member']     					= 'Member';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/language/&addLanguage;/checkout/checkout.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['column_member']      					= 'Member';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/&addLanguage;/mail/order.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			$_['text_member']						= 'Member';
+			$_['text_image']						= 'Image';
+			]]></add>
+		</operation>
+	</file>
+	
+</modification>

@@ -1,0 +1,170 @@
+<modification>
+	<id>Customer Product Manager (CPM) by Manufacturer for OpenCart</id>
+	<version>2.2.0</version>
+	<vqmver>2.4.0</vqmver>
+	<author>garudacrafts</author>
+	<notes>
+		- Requires Customer Product Manager (CPM) extension/module version 2.0+
+		- Description: Links Manufacturer to a CPM Member Account so that products created by the Member will be automatically linked to that Manufacturer
+		- Important: EVERY CPM Member Account MUST be linked to a Manufacturer if you want to use this!
+		- Admin->Catalog->Manufacturers (back-end) - select a CPM-Enabled Customer Account to link to the Manufacturer
+		- Store->Account->My Products->Insert/Edit Form (front-end) - limits Manufacturer field selection to that linked to the CPM-Enabled Customer's Account
+	</notes>
+		
+	<file name="admin/controller/catalog/manufacturer.php">
+		<operation>
+			<search position="after"><![CDATA[
+			function getForm() {
+			]]></search>
+			<add><![CDATA[
+			$this->model_catalog_manufacturer->checkManufacturerCPM();
+			]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[
+			$this->template = 'catalog/manufacturer_form.tpl';
+			]]></search>
+			<add><![CDATA[
+			if ($this->config->get('cpm_status') == '1') {  // CPM module is enabled			   
+	
+				$this->data['entry_customer'] = $this->language->get('entry_customer');
+				$this->data['text_none'] = $this->language->get('text_none');
+	
+				$this->load->model('sale/customer');
+				$data['filter_customer_group_id'] = $this->config->get('cpm_customer_group'); // filter by Customer Group in CPM module
+				$data['filter_cpm_enabled'] = 1;
+				$this->data['customers'] = $this->model_sale_customer->getCustomers($data);
+				
+			}
+			
+			// Set Customer Id
+			if (isset($this->request->post['customer_id'])) {
+				$this->data['customer_id'] = $this->request->post['customer_id'];
+			} elseif (isset($manufacturer_info)) {
+				$this->data['customer_id'] = $manufacturer_info['cpm_customer_id'];
+			} else {
+				$this->data['customer_id'] = '';
+			}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/view/template/catalog/manufacturer_form.tpl">
+		<operation>
+			<search position="before" offset="2"><![CDATA[
+              <td><?php echo $entry_sort_order; ?></td>
+			]]></search>
+			<add><![CDATA[
+			<?php if ($this->config->get('cpm_status') == '1') { ?>
+			<tr>
+				<td><?php echo $entry_customer; ?></td>
+				<td><select name="customer_id">
+				  <option value="0"><?php echo $text_none; ?></option>
+				  <?php foreach ($customers as $customer) { ?>
+				  <?php if ($customer['customer_id'] == $customer_id) { ?>
+				  <option value="<?php echo $customer['customer_id']; ?>" selected="selected"><?php echo $customer['fullname']; ?></option>
+				  <?php } else { ?>
+				  <option value="<?php echo $customer['customer_id']; ?>"><?php echo $customer['fullname']; ?></option>
+				  <?php } ?>
+				  <?php } ?>
+				</select></td>
+			</tr>
+			<?php } ?>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/language/english/catalog/manufacturer.php">
+		<operation>
+			<search position="after"><![CDATA[
+			// Text
+			]]></search>
+			<add><![CDATA[
+			$_['text_none']          = 'None';
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[
+			// Entry
+			]]></search>
+			<add><![CDATA[
+			$_['entry_customer']         = 'Registered Account:';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/model/catalog/manufacturer.php">
+		<operation>
+			<search position="after"><![CDATA[
+			class ModelCatalogManufacturer extends Model {
+			]]></search>
+			<add><![CDATA[
+			public function checkManufacturerCPM() {
+				$sql = "DESCRIBE " . DB_PREFIX . "manufacturer cpm_customer_id";
+				$query = $this->db->query($sql);
+				if (!$query->num_rows) {
+					$sql = "ALTER TABLE " . DB_PREFIX . "manufacturer ADD cpm_customer_id INT(11) NOT NULL DEFAULT 0";
+					$this->db->query($sql);
+				}
+			}
+			]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[
+			if (isset($data['image'])) {
+			]]></search>
+			<add><![CDATA[
+			if (isset($data['customer_id'])) {
+				$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET cpm_customer_id = '" . (int)$data['customer_id'] . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
+			}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/model/catalog/manufacturer.php">
+		<operation>
+			<search position="bottom" offset="2"></search>
+			<add><![CDATA[
+			/* Customer Product Manager */
+			public function getManufacturersByCustomerId($customer_id) {
+				$query = $this->db->query("SELECT manufacturer_id, name FROM " . DB_PREFIX . "manufacturer WHERE cpm_customer_id = '" . (int)$customer_id . "'");
+					if($query->num_rows){
+						return $query->rows;
+					}
+			}		
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/account/product.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$this->data['manufacturers'] = $this->model_catalog_manufacturer->getManufacturers();
+			]]></search>
+			<add><![CDATA[
+			$this->data['manufacturers'] = $this->model_catalog_manufacturer->getManufacturersByCustomerId($this->data['customer_id']);
+			]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[
+			if ($this->error && !isset($this->error['warning'])) {
+			]]></search>
+			<add><![CDATA[
+			if (empty($this->request->post['manufacturer_id'])) {
+				$this->error['manufacturer'] = $this->language->get('error_manufacturer');
+			}
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/account/product_form.tpl">
+		<operation>
+			<search position="replace"><![CDATA[
+            <option value="0" selected="selected"><?php echo $text_none; ?></option>
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+	</file>
+
+</modification>

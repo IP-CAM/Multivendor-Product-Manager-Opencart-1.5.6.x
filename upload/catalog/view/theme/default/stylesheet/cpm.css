@@ -1,0 +1,301 @@
+@charset "utf-8";
+/* CSS Document - Customer Product Upload */
+
+#content .required {
+	color: #FF0000;
+	font-weight: bold;
+}
+#content .error {
+	margin-top: 3px;
+	color: #FF0000;
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+}
+#content .help {
+	color: #666;
+	font-size: 11px;
+	font-weight: normal;
+	font-family: Verdana, Geneva, sans-serif;
+	display: block;
+}
+#content .icon {
+	vertical-align: middle;
+	cursor: pointer;
+}
+#content .image {
+	border: 1px solid #EEEEEE;
+	padding: 10px;
+	display: inline-block;
+}
+#content .image img {
+	margin-bottom: 5px;
+}
+#content .buttons .button {
+	margin-left: 5px;
+}
+.content {
+	min-height: 300px;
+}
+#content table.list {
+	border-collapse: collapse;
+	width: 100%;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	margin-bottom: 20px;
+}
+#content table.list td {
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+#content table.list thead td {
+	background-color: #EFEFEF;
+	padding: 0px 5px;
+}
+#content table.list thead td a, table.list thead td {
+	text-decoration: none;
+	color: #222222;
+	font-weight: bold;
+}
+#content table.list tbody td {
+	vertical-align: middle;
+	padding: 0px 5px;
+	background: #FFFFFF;
+}
+#content table.list .left {
+	float: none;
+	width: initial;
+	text-align: left;
+	padding: 7px;
+}
+#content table.list .right {
+	float: none;
+	width: initial;
+	text-align: right;
+	padding: 7px;
+}
+#content table.list .center {
+	float: none;
+	width: initial;
+	text-align: center;
+	padding: 7px;
+}
+#content table.list .asc {
+	padding-right: 15px;
+	background: url('../image/cpm/asc.png') right center no-repeat;
+}
+#content table.list .desc {
+	padding-right: 15px;
+	background: url('../image/cpm/desc.png') right center no-repeat;
+}
+#content table.list tr.filter td {
+	padding: 5px;
+	background: #E7EFEF;
+}
+#content .pagination {
+	border-top: 1px solid #DDDDDD;
+	display: inline-block;
+	width: 100%;
+	padding-top: 6px;
+}
+#content .pagination .links {
+	float: left;
+	padding-top: 6px;
+}
+#content .pagination .links a {
+	border: 1px solid #DDDDDD;
+	padding: 4px 10px;
+	font-size: 12px;
+	text-decoration: none;
+	color: #A3A3A3;
+}
+#content .pagination .links b {
+	border: 1px solid #269BC6;
+	padding: 4px 10px;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #269BC6;
+	background: #FFFFFF;
+}
+#content .pagination .results {
+	float: right;
+	padding-top: 6px;
+	font-size: 12px;
+}
+#content table.form {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+#content table.form > tbody > tr > td:first-child {
+	width: 200px;
+}
+#content table.form > tbody > tr > td {
+	padding: 10px;
+	color: #000000;
+	border-bottom: 1px dotted #CCCCCC;
+}
+#content .scrollbox {
+	border: 1px solid #CCCCCC;
+	width: 350px;
+	height: 200px;
+	background: #FFFFFF;
+	overflow-y: scroll;
+}
+#content .scrollbox img {
+	float: right;
+	cursor: pointer;
+}
+#content .htabs {
+	padding: 0px 0px 0px 10px;
+	height: 30px;
+	line-height: 16px;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 15px;
+}
+#content .htabs a {
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	background: #FFFFFF url('../image/tab.png') repeat-x;
+	padding: 7px 15px 6px 15px;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
+	margin-right: 2px;
+	display: none;
+}
+#content .htabs a.selected {
+	padding-bottom: 7px;
+	background: #FFFFFF;
+}
+#content .vtabs {
+	width: 190px;
+	padding: 10px 0px;
+	min-height: 300px;
+	float: left;
+	display: block;
+	border-right: 1px solid #DDDDDD;
+}
+#content .vtabs a {
+	display: none;
+}
+#content .vtabs a, 
+#content .vtabs span {
+	display: block;
+	float: left;
+	width: 160px;
+	margin-bottom: 5px;
+	clear: both;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	background: #F7F7F7;
+	padding: 6px 14px 7px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: right;
+	text-decoration: none;
+	color: #000000;
+}
+#content .vtabs a.selected {
+	padding-right: 15px;
+	background: #FFFFFF;
+}
+#content .vtabs a img, 
+#content .vtabs span img {
+	position: relative;
+	top: 3px;
+	cursor: pointer;
+}
+#content .vtabs-content {
+	margin-left: 205px;
+}
+#content .accordion-heading {
+	background: #EFEFEF;
+	border: 1px solid #DDDDDD;
+	padding: 8px;
+	font-weight: bold;
+	font-size: 13px;
+	color: #555555;
+	margin-bottom: 15px;
+}
+#content .accordion-heading a {
+	float: right;
+	margin-top: 1px;
+	font-weight: normal;
+	text-decoration: none;
+}
+#content .accordion-content {
+	padding: 0px 0px 15px 0px;
+	overflow: auto;
+}
+#content .scrollbox div {
+	padding: 3px;
+}
+#content .scrollbox div input {
+	margin: 0px;
+	padding: 0px;
+	margin-right: 3px;
+}
+#content .scrollbox div.even {
+	background: #FFFFFF;
+}
+#content .scrollbox div.odd {
+	background: #E4EEF7;
+}
+#content .overview {
+	float: left;
+	width: 49%;
+	margin-bottom: 20px;
+}
+#content .overview table {
+	width: 100%;
+}
+#content .overview td + td {
+	text-align: right;
+}
+#content .statistic {
+	float: right;
+	width: 49%;
+	margin-bottom: 20px;
+}
+#content .range {
+	float: right;
+	color: #FFF;
+	vertical-align: middle;
+}
+#content .range {
+	padding-top: 1px;
+	padding-right: 1px;
+}
+#content .range, .range select {
+	font-size: 11px;
+}
+#content .latest {
+	clear: both;
+}
+#content .latest tbody td {
+	background: #FFF;
+}
+#content .refresh {
+	cursor: pointer;
+	position: relative;
+	top: 3px;
+}
+#form input, #form select {width:auto;}
+#content input[readonly="readonly"] {background-color:#DDD; }
+#content .form-actions {text-align:center;}
+#content a, #content a:visited {cursor: pointer;}
+#content table.list tbody td.approved, #content input.approved {background:#CF00FF;}
+#content table.list tbody td.not-approved, #content input.not-approved {background:#FFCC00;}
+#content table.list tbody td.enabled, #content option.enabled, #content select option.enabled {background: #8EC74B;}
+#content table.list tbody td.disabled, #content option.disabled, #content select option.disabled {background: #DC313E;}
+#content table.list tbody td.enabled, #content table.list tbody td.disabled, #content table.list tbody td.approved, #content table.list tbody td.not-approved,
+#content option.enabled, #content option.disabled, #content select option.enabled, #content select option.disabled, #content input.approved, #content input.not-approved {color:#FFFFFF; font-weight:bold;}

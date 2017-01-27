@@ -1,0 +1,262 @@
+<?php
+// Heading
+$_['heading_title']          = 'My Products'; 
+
+// Locale
+$_['code']                    = 'en';
+$_['direction']               = 'ltr';
+$_['date_format_short']       = 'd/m/Y';
+$_['date_format_long']        = 'l dS F Y';
+$_['time_format']             = 'h:i:s A';
+$_['decimal_point']           = '.';
+$_['thousand_point']          = ',';
+
+// Text  
+$_['text_plus']              = '+';
+$_['text_minus']             = '-';
+$_['text_default']           = 'Default';
+$_['text_image_manager']     = 'Image Manager';
+$_['text_browse']            = 'Browse Files';
+$_['text_clear']             = 'Clear Image';
+$_['text_option']            = 'Option';
+$_['text_option_value']      = 'Option Value';
+$_['text_percent']           = 'Percentage';
+$_['text_amount']            = 'Fixed Amount';
+
+$_['text_account']         	= 'Account';
+$_['text_products']         = 'Products:';
+$_['text_total']            = 'Total:';
+$_['text_success']          = 'You have successfully modified product listing(s)!';
+$_['text_empty']            = 'You have not added any previous products!';
+$_['text_error']            = 'The product you requested could not be found!';
+
+$_['text_yes']                = 'Yes';
+$_['text_no']                 = 'No';
+$_['text_enabled']            = 'Enabled';
+$_['text_disabled']           = 'Disabled';
+$_['text_none']               = ' --- None --- ';
+$_['text_select']             = ' --- Please Select --- ';
+$_['text_select_all']         = 'Select All';
+$_['text_unselect_all']       = 'Unselect All';
+$_['text_all_zones']          = 'All Zones';
+$_['text_default']            = ' <b>(Default)</b>';
+$_['text_close']              = 'Close';
+$_['text_pagination']         = 'Showing {start} to {end} of {total} ({pages} Pages)';
+$_['text_no_results']         = 'No results!';
+$_['text_separator']          = ' &gt; ';
+$_['text_edit']               = 'Edit';
+$_['text_view']               = 'View';
+$_['text_home']               = 'Home';
+
+$_['text_choose']         = 'Choose';
+$_['text_radio']          = 'Radio';
+$_['text_checkbox']       = 'Checkbox';
+$_['text_input']          = 'Input';
+$_['text_file']           = 'File';
+$_['text_date']           = 'Date';
+$_['text_datetime']       = 'Date &amp; Time';
+$_['text_time']           = 'Time';
+
+$_['text_digital_download_add']     = 'Add Digital Downloads';
+$_['text_digital_download_add_instructions']     = 'Add a file to your product listing for customers to download.';
+$_['text_history_success']        	= 'Digital Download successfully created!';
+$_['text_create_digital_download']  = 'Create New Digital Download';
+$_['text_create_digital_download_instructions']  = 'Upload a new Digital Download File to your account.';
+$_['text_wait']            		= 'Please Wait!';
+
+$_['text_product_enabled']    = 'You have enabled %s product listing(s)!';
+$_['text_product_disabled']   = 'You have disabled %s product listing(s)!';
+$_['error_notchecked']        = 'No product listing(s) selected! Please select one or more checkboxes.';
+
+$_['text_confirm']            = 'Confirm Delete?';
+
+// Column
+$_['column_name']            = 'Title';
+$_['column_model']           = 'Model';
+$_['column_image']           = 'Image';
+$_['column_price']           = 'Price';
+$_['column_quantity']        = 'Quantity';
+$_['column_approved']        = 'Approved';
+$_['column_status']          = 'Status';
+$_['column_action']          = 'Action';
+
+// Entry
+$_['entry_name']             = 'Name:';
+$_['entry_meta_keyword'] 	 = 'Meta Tag Keywords:';
+$_['entry_meta_description'] = 'Meta Tag Description:';
+$_['entry_meta_title'] 	 	 = 'Meta Title:';
+$_['entry_description']      = 'Description:';
+$_['entry_store']            = 'Stores:';
+$_['entry_keyword']          = 'SEO Keyword:';
+$_['entry_model']            = 'Model:';
+$_['entry_sku']              = 'SKU:<br/><span class="help">Stock Keeping Unit</span>';
+$_['entry_upc']              = 'UPC:<br/><span class="help">Universal Product Code</span>';
+$_['entry_ean']              = 'EAN:<br/><span class="help">European Article Number</span>';
+$_['entry_jan']              = 'JAN:<br/><span class="help">Japanese Article Number</span>';
+$_['entry_isbn']             = 'ISBN:<br/><span class="help">International Standard Book Number</span>';
+$_['entry_mpn']              = 'MPN:<br/><span class="help">Manufacturer Part Number</span>';
+$_['entry_location']         = 'Location:';
+$_['entry_manufacturer']     = 'Manufacturer:';
+$_['entry_shipping']         = 'Requires Shipping:'; 
+$_['entry_date_available']   = 'Date Available:';
+$_['entry_quantity']         = 'Quantity:';
+$_['entry_minimum']          = 'Minimum Quantity:';
+$_['entry_stock_status']     = 'Out Of Stock Status:';
+$_['entry_price']            = 'Price:';
+$_['entry_tax_class']        = 'Tax Class:';
+$_['entry_points']           = 'Points:';
+$_['entry_option_points']    = 'Points:';
+$_['entry_subtract']         = 'Subtract Stock:';
+$_['entry_weight_class']     = 'Weight Class:';
+$_['entry_weight']           = 'Shipping Weight:';
+$_['entry_length']           = 'Length Class:';
+$_['entry_dimension']        = 'Dimensions<br>(L x W x H):';
+$_['entry_image']            = 'Image:';
+$_['entry_customer_group']   = 'Customer Group:';
+$_['entry_date_start']       = 'Date Start:';
+$_['entry_date_end']         = 'Date End:';
+$_['entry_priority']         = 'Priority:';
+$_['entry_attribute']        = 'Attribute:';
+$_['entry_attribute_group']  = 'Attribute Group:';
+$_['entry_text']             = 'Text:';
+$_['entry_option']           = 'Option:';
+$_['entry_option_value']     = 'Option Value:';
+$_['entry_required']         = 'Required:';
+$_['entry_approved']         = 'Admin Approved:';
+$_['entry_status']           = 'Status:';
+$_['entry_sort_order']       = 'Sort Order:';
+$_['entry_category']         = 'Categories:';
+$_['entry_filter']           = 'Filters:';
+$_['entry_download']         = 'Downloads:';
+$_['entry_download_name']       = 'Product Download Name';
+$_['entry_download_filename']   = 'Filename';
+$_['entry_download_mask']       = 'Mask:';
+$_['entry_download_remaining']  = 'Total Downloads Allowed:';
+$_['entry_download_update']     = 'Push to Previous Customers:<br /><span class="help">Check this to update previously purchased versions as well.</span>';
+$_['entry_related']          = 'Related Products:<br /><span class="help">(Autocomplete)</span>';
+$_['entry_tag']          	 = 'Product Tags:<br /><span class="help">comma separated</span>';
+$_['entry_reward']           = 'Reward Points:';
+$_['entry_layout']           = 'Layout Override:';
+$_['entry_profile']          = 'Profile:';
+
+// Help
+$_['help_quantity']           = '';
+$_['help_subtract']           = '';
+$_['help_approved']           = 'Indicates whether or not an Admin has reviewed and approved this Product';
+$_['help_model']           	  = '';
+$_['help_keyword']            = '';
+$_['help_related']            = '';
+$_['help_categories']         = '';
+
+// Button
+$_['button_insert']           = 'Insert';
+$_['button_delete']           = 'Delete';
+$_['button_save']             = 'Save';
+$_['button_cancel']           = 'Cancel';
+$_['button_clear']            = 'Clear Log';
+$_['button_close']            = 'Close';
+$_['button_filter']           = 'Filter';
+$_['button_send']             = 'Send';
+$_['button_edit']             = 'Edit';
+$_['button_copy']             = 'Copy';
+$_['button_back']             = 'Back';
+$_['button_remove']           = 'Remove';
+$_['button_backup']           = 'Backup';
+$_['button_restore']          = 'Restore';
+$_['button_upload']           = 'Upload';
+$_['button_submit']           = 'Submit';
+$_['button_invoice']          = 'Print Invoice';
+$_['button_add_address']      = 'Add Address';
+$_['button_add_attribute']    = 'Add Attribute';
+$_['button_add_banner']       = 'Add Banner';
+$_['button_add_product']      = 'Add Product';
+$_['button_add_voucher']      = 'Add Voucher';
+$_['button_add_option']       = 'Add Option';
+$_['button_add_option_value'] = 'Add Option Value';
+$_['button_add_discount']     = 'Add Discount';
+$_['button_add_special']      = 'Add Special';
+$_['button_add_image']        = 'Add Image';
+$_['button_add_geo_zone']     = 'Add Geo Zone';
+$_['button_add_history']      = 'Add History';
+$_['button_add_transaction']  = 'Add Store Credit';
+$_['button_add_total']        = 'Add Total';
+$_['button_add_reward']       = 'Add Reward Points';
+$_['button_add_route']        = 'Add Route';
+$_['button_add_rule' ]        = 'Add Rule';
+$_['button_add_module']       = 'Add Module';
+$_['button_add_link']         = 'Add Link';
+$_['button_add_profile']      = 'Add Profile';
+$_['button_update_total']     = 'Update Totals';
+$_['button_approve']          = 'Approve';
+$_['button_reset']            = 'Reset';
+$_['button_enable']			  = 'Enable';
+$_['button_disable']		  = 'Disable';
+$_['button_upload_digital_download']   = 'Browse';
+$_['button_add_digital_download']   = 'Add Download';
+
+// Tab
+$_['tab_address']             = 'Address';
+$_['tab_admin']               = 'Admin';
+$_['tab_attribute']           = 'Attribute';
+$_['tab_coupon_history']      = 'Coupon History';
+$_['tab_customer']            = 'Customer Details';
+$_['tab_data']                = 'Data';
+$_['tab_design']              = 'Design';
+$_['tab_discount']            = 'Discount';
+$_['tab_general']             = 'General';
+$_['tab_fraud']               = 'Fraud';
+$_['tab_ip']                  = 'IP Addresses';
+$_['tab_links']               = 'Links';
+$_['tab_download']            = 'Downloads';
+$_['tab_image']               = 'More Images';
+$_['tab_option']              = 'Option';
+$_['tab_server']              = 'Server';
+$_['tab_store']               = 'Store';
+$_['tab_profile']             = 'Profile';
+$_['tab_special']             = 'Special';
+$_['tab_local']               = 'Local';
+$_['tab_mail']                = 'Mail';
+$_['tab_module']              = 'Module';
+$_['tab_order']               = 'Order Details';
+$_['tab_order_history']       = 'Order History';
+$_['tab_payment']             = 'Payment Details';
+$_['tab_product']             = 'Product';
+$_['tab_return']              = 'Return Details';
+$_['tab_return_history']      = 'Return History';
+$_['tab_reward']              = 'Points';
+$_['tab_shipping']            = 'Shipping Details';
+$_['tab_total']               = 'Totals';
+$_['tab_transaction']         = 'Store Credits';
+$_['tab_voucher']             = 'Vouchers';
+$_['tab_voucher_history']     = 'Voucher History';
+
+// Error
+$_['error_max_products']     = 'Error:  You have met your maximum number of Products!';
+$_['error_warning']          = 'Warning: Please check the form carefully for errors!';
+$_['error_permission']       = 'Warning: You do not have permission to modify Products!';
+$_['error_image']            = 'You must upload an Image for the Product!';
+$_['error_model']     		 = 'Product Model must be greater than 3 and less than 64 characters!';
+$_['error_name']             = 'Product Name must be greater than 3 and less than 255 characters!';
+$_['error_name_exists']      = 'Product Name already exists! You must choose a unique name for each listing.';
+$_['error_description']      = 'Product Description must be greater than %s and less than %s characters!';
+$_['error_price']            = 'You must enter a Price for the Product!';
+$_['error_dimensions']       = 'You must enter Dimensions (L x W x H) for the Product!';
+$_['error_weight']      	 = 'You must enter an esitmated Shipping Weight for the Product!';
+$_['error_quantity']     	 = 'You must enter a Quantity for the Product!';
+$_['error_manufacturer']     = 'You must select a Manufacturer!';
+$_['error_product_category'] = 'You must select one or more Categories!';
+$_['error_date_available'] 	 = 'You must enter a date this Product becomes available!';
+$_['error_download_name']       = 'Name must be between 3 and 64 characters!';
+$_['error_download_filename']   = 'Filename must be between 3 and 128 characters!';
+$_['error_download_exists']     = 'File does not exist!';
+$_['error_download_mask']       = 'Mask must be between 3 and 128 characters!';
+$_['error_download_filetype']   = 'Invalid file type!';
+$_['error_upload_1']          = 'Warning: The uploaded file exceeds the upload_max_filesize directive in php.ini!';
+$_['error_upload_2']          = 'Warning: The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form!';
+$_['error_upload_3']          = 'Warning: The uploaded file was only partially uploaded!';
+$_['error_upload_4']          = 'Warning: No file was uploaded!';
+$_['error_upload_6']          = 'Warning: Missing a temporary folder!';
+$_['error_upload_7']          = 'Warning: Failed to write file to disk!';
+$_['error_upload_8']          = 'Warning: File upload stopped by extension!';
+$_['error_upload_999']        = 'Warning: No error code available!';
+?>

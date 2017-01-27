@@ -1,0 +1,158 @@
+<modification>
+	<id>Customer Product Manager (CPM) for OpenCart - v1.5.4 mods</id>
+	<version>2.3.0</version>
+	<vqmver>2.4.0</vqmver>
+	<author>garudacrafts</author>
+	<notes>
+		- Requires  OpenCart version 1.5.4 with Customer Product Manager extension/module installed, including vqmod xml file 'customer_product_manager.xml'
+		- Description: this extra vQmod xml file includes additional modifications to CPM so that it'll work with OpenCart v.1.5.4
+	</notes>
+	
+	<!-- Edit Product Categories START -->
+	
+	<file name="catalog/controller/account/product.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$this->data['categories'] = $this->model_account_product->getAllCPMCategories($data);
+			]]></search>
+			<add><![CDATA[
+			$this->data['categories'] = $this->model_account_product->getCategoriesCPM(0);
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Edit Product Categories END -->
+	
+	<!-- Remove Product Filters START -->
+	
+	<file name="catalog/controller/account/product.php">
+		<operation>
+			<search position="replace" offset="8"><![CDATA[
+			$this->data['filters'] = $this->model_account_product->getFilters();
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/model/account/product.php">
+		<operation>
+			<search position="replace" offset="4"><![CDATA[
+			if (isset($data['product_filters'])) {
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			$this->db->query("DELETE FROM " . DB_PREFIX . "product_filter WHERE product_id = '" . (int)$product_id . "'");
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			$data = array_merge($data, array('product_filters' => $this->getProductFilters($product_id)));
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/view/theme/*/template/account/product_form.tpl">
+		<operation>
+			<search position="replace" offset="19"><![CDATA[
+			<tr <?php echo (!$this->config->get('cpm_data_field_filter') ? 'style="display:none;"' : '') ?>>
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/view/template/module/cpm.tpl">
+		<operation>
+			<search position="replace" offset="12"><![CDATA[
+			<td><?php echo $entry_data_field_filter; ?></td>
+			]]></search>
+			<add><![CDATA[
+			<input type="hidden" name="cpm_data_field_filter" value="0" />
+			]]></add>
+		</operation>
+	</file>	
+	
+	<!-- Remove Product Filters END -->
+
+	<!-- Remove Profiles START -->
+	
+	<file name="catalog/controller/account/product.php">
+		<operation>
+			<search position="replace" offset="8"><![CDATA[
+			$this->data['profiles'] = $this->model_account_product->getProfiles();
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/model/account/product.php">
+		<operation>
+			<search position="replace" offset="4"><![CDATA[
+			if (isset($data['product_profiles'])) {
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			$this->db->query("DELETE FROM " . DB_PREFIX . "product_profile WHERE product_id = '" . (int)$product_id . "'");
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			$data = array_merge($data, array('product_profiles' => $this->getProductProfiles($product_id)));
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/view/theme/*/template/account/product_form.tpl">
+		<operation>
+			<search position="replace"><![CDATA[
+			<?php if ($this->config->get('cpm_tab_profile') == 1) { ?><a href="#tab-profile"><?php echo $tab_profile; ?></a><?php } ?>
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace" offset="49"><![CDATA[
+			<div id="tab-profile" <?php if (!$this->config->get('cpm_tab_profile')) echo 'style="display:none;"'; ?>>
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace" offset="27"><![CDATA[
+			var profile_row = <?php echo $profile_row ?>;
+			]]></search>
+			<add><![CDATA[
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/view/template/module/cpm.tpl">
+		<operation>
+			<search position="replace" offset="12"><![CDATA[
+			<td><?php echo $entry_tab_profile; ?></td>
+			]]></search>
+			<add><![CDATA[
+			<input type="hidden" name="cpm_tab_profile" value="0" />
+			]]></add>
+		</operation>
+	</file>	
+
+	<!-- Remove Profiles END -->
+
+</modification>

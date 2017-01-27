@@ -1,0 +1,63 @@
+<modification>
+	<id>Direct Image Upload for CPM Product Manger</id>
+	<version>1.0.0</version>
+	<vqmver>2.4.0</vqmver>
+	<author>garudacrafts</author>
+	<notes>
+		- Requires Customer Product Manager (CPM) extension/module version 2.0+
+		- Switches image upload on CPM Product Manager from filemanager to direct ajax upload
+		- Only works on the main image on the Data Tab and you will need to disable the Images Tab on the CPM module extension settings if you want to use this
+	</notes>
+		
+	<file name="catalog/view/theme/*/template/account/product_form.tpl">
+		<operation>
+			<search position="replace"><![CDATA[
+			<a onclick="image_upload('image', 'thumb');"><?php echo $text_browse; ?></a>
+			]]></search>
+			<add><![CDATA[
+			<a id="button-upload"><?php echo $text_browse; ?></a> 
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[
+			<script type="text/javascript" src="catalog/view/javascript/ckeditor/ckeditor.js"></script> 
+			]]></search>
+			<add><![CDATA[
+			<script type="text/javascript" src="catalog/view/javascript/jquery/ajaxupload.js"></script> 
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace" offset="24"><![CDATA[
+			function image_upload(field, thumb) {
+			]]></search>
+			<add><![CDATA[
+			new AjaxUpload('#button-upload', {
+				action: 'index.php?route=account/register_cpm/upload',
+				name: 'file',
+				autoSubmit: true,
+				responseType: 'json',
+				onSubmit: function(file, extension) {
+					$('#button-upload').after('<img src="catalog/view/theme/default/image/loading.gif" class="loading" style="padding-left: 5px;" />');
+					$('#button-upload').attr('disabled', true);
+				},
+				onComplete: function(file, json) {
+					$('#button-upload').attr('disabled', false);
+		
+					if (json['success']) {
+						alert(json['success']);
+						$('input[name=\'image\']').attr('value', json['filename']);
+						$('#thumb').attr('src', json['thumb']);
+					}
+		
+					if (json['error']) {
+						alert(json['error']);
+					}
+		
+					$('.loading').remove();	
+				}
+			});
+			]]></add>
+		</operation>
+	</file>
+
+</modification>
