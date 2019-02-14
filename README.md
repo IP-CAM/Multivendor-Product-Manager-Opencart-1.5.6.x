@@ -1,22 +1,24 @@
-# Customer Product Manager (CPM) / SaaS Membership Module v2.3.2 for OpenCart
+# Customer Product Manager (CPM) / SaaS Membership Module v2.3.2 for OpenCart 1.5.6.x
 
 A multi-seller membership extension for OpenCart v1.5. This membership system gives members the ability to create and sell products on your e-commerce store.
 
-Demo site:
-- Member Demo:  http://opencart.garudacrafts.com/1561/ (member@garudacrafts.com, testmember)
-- Admin Demo:  http://opencart.garudacrafts.com/1561/admin/ (demo, demo)
-
 Installation instructions and more:
-- Installation and Upgrade Instructions:  http://opencart.garudacrafts.com/1561/installation-info
-- Frequently Asked Questions (FAQ):  http://opencart.garudacrafts.com/1561/faq
-- Changelog:  http://opencart.garudacrafts.com/1561/changelog
-- Features:  http://opencart.garudacrafts.com/1561/features
-- Modified Files: http://opencart.garudacrafts.com/1561/modified-files
-- Screenshots: http://opencart.garudacrafts.com/1561/screenshots
+
+- Features: https://web.archive.org/web/20151009072337/http://opencart.garudacrafts.com/1561/index.php?route=information/information&information_id=4
+
+- Installation and Upgrade Instructions: https://web.archive.org/web/20151009074516/http://opencart.garudacrafts.com/1561/index.php?route=information/information&information_id=6
+
+- Frequently Asked Questions (FAQ):  https://web.archive.org/web/20151009074535/http://opencart.garudacrafts.com/1561/index.php?route=information/information&information_id=8
+
+- Changelog:  https://web.archive.org/web/20151009074527/http://opencart.garudacrafts.com/1561/index.php?route=information/information&information_id=7
+
+- Modified Files: https://web.archive.org/web/20151009074538/http://opencart.garudacrafts.com/1561/index.php?route=information/information&information_id=9
+
+- Screenshots: https://web.archive.org/web/20151009074520/http://opencart.garudacrafts.com/1561/index.php?route=information/information&information_id=10
 
 ## Requirements
-- OpenCart v1.5.3.x - v1.5.6.x
-- vQmod (http://code.google.com/p/vqmod/)
+- OpenCart v1.5.3.x - v1.5.6.5
+- vQmod
 
 ## Installation Instructions
 1. BACKUP your website (files and database) before making any changes
@@ -31,8 +33,6 @@ Installation instructions and more:
 
 *NOTE:* "bonus" files in "/upload-bonus" directory are provided as extra code snippets and DO NOT come with support. Use at your own discretion!
 
-If you have any issues after installation, please check the FAQ (Frequenty Asked Questions) first! http://opencart.garudacrafts.com/1561/faq
-
 ## Changelog
 ### v2.3.2
 - updated Admin Members and Admin Customers pages
@@ -43,7 +43,6 @@ If you have any issues after installation, please check the FAQ (Frequenty Asked
 - added new Members Module to display a list of Members in multiple front-end module position and layout configurations
 - added new Enable/Disable buttons to Member Product Manager
 - minor misc improvements to code stucture of Member Product Manager
-- included "bonus" zip file of new multiple-file image upload support for Member Image Manager (NOT supported: code adpated from another developer, http://www.opencart.com/index.php?route=extension/extension/info&extension_id=8221, and modified for CPM; use at your own discretion)
 - fixed bug in copying over product downloads when Copy button on Member Product Manager is used to create a new product
 
 ### v2.3.1
