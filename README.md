@@ -1,4 +1,4 @@
-# Customer Product Manager (CPM) / SaaS Membership Module v2.3.2 for OpenCart 1.5.6.x
+# MultiVendor Customer Product Manager (CPM) / SaaS Membership Module v2.3.2 for OpenCart 1.5.6.x
 
 A multi-seller membership extension for OpenCart v1.5. This membership system gives members the ability to create and sell products on your e-commerce store.
 
